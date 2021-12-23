@@ -93,3 +93,12 @@ li {
 #current_temp {
   font-size: 70px;
 }
+
+.hungry {
+  font-size: 15px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+  text-decoration-line: none;
+}
