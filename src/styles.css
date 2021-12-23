@@ -1,0 +1,95 @@
+body {
+  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+form {
+  margin: 30px;
+  width: 50%;
+}
+
+.line {
+  margin: 0 1rem;
+  width: 4px;
+  background-color: #000;
+}
+
+#loc_name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#description {
+  font-size: 30px;
+}
+
+.container {
+  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
+  display: block;
+  margin: 20px auto;
+  padding: 20px 20px;
+  margin-top: 30px;
+  max-width: 700px;
+}
+
+h1 {
+  text-align: left;
+  margin: 30px;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 60px;
+}
+
+.col {
+  margin-right: 5%;
+  text-align: center;
+}
+.col-5 {
+  padding: 30% auto;
+}
+
+.col-sm {
+  padding-top: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.row {
+  box-sizing: content-box;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+}
+
+.sunny {
+  box-sizing: content-box;
+  width: 80%;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+}
+
+.sunny-sub-icon {
+  box-sizing: content-box;
+  width: 50%;
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+#current_temp {
+  font-size: 70px;
+}
