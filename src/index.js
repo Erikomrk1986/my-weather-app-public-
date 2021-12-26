@@ -8,16 +8,23 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
-let day = days[currentTime.getDay()];
 
-let hours = (`0` + currentTime.getHours()).slice(-2);
-let minutes = (`0` + currentTime.getMinutes()).slice(-2);
+let day = days[currentTime.getDay()];
+////////////////////////////////////////////
+
+//let hours = (`0` + currentTime.getHours()).slice(-2);
+//let minutes = (`0` + currentTime.getMinutes()).slice(-2);
+
+let currentLocalTime = currentTime.toLocaleString("en-AU", {
+  hour: "2-digit",
+  minute: "2-digit",
+});
 
 let h2 = document.querySelector("h2");
 
-h2.innerHTML = `${day}  ${hours}:${minutes}`;
+h2.innerHTML = `${day}  ${currentLocalTime}`;
 console.log(new Date());
 //////////////////////////////////////////////////////////////////////
 //when searching for a city (i.e. Paris),
@@ -81,4 +88,4 @@ locForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 ////////
-searchCity("New York");
+searchCity("muscat");
