@@ -19,14 +19,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-   <h1>SheCodes Weather Project</h1>
+   <h1>SheCodes Weather App Project</h1>
     <div class="container">
+
+
+
       <div class="weather-app-wrapper">      
         <div class="search-engine">             
           <form class="loc_form" id="loc_form">
-            <input type="search" id="loc_input" placeholder="Enter a city"
-                   class= "form-control shadow-sm"/>
-                   <button id = "serch_city" >
+            <div class="row">
+             <div class="col-12">
+              <input type="search" id="loc_input" 
+              placeholder="Enter a city"
+              class= "form-control" 
+              id="city_input" 
+              />
+              </div>
+
+          
+
+                   <button type="submit" id = "btn_serch_city" value="Search">
                     Search
                    </button>
                    <button class="btn_success w-100"
@@ -34,7 +46,9 @@
                     Current
                    </button>
                   </div>
-          </form>
+                </div>
+          </div>
+        </form>
              
        
         <h1 id="loc_name"></h1>
@@ -120,11 +134,12 @@
               <div class="col-sm"> 33℃ </div>
    </div>
         </div>
-          <div class="hungry"> 
+          
+        </div>
+        <div class="hungry"> 
             <a href="https://hungry-hypatia-a2fdaf.netlify.app/">
              Open-source code </a> &nbsp;
             by Eriko KRY
-        </div>
         </div>
         </div>
           

@@ -1,11 +1,40 @@
 body {
-  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
+  background: linear-gradient(0.35turn, #76cdf1, #ebf8e1, #f69d3c);
   font-family: "Roboto Slab", serif;
 }
 
-form {
+h1 {
+  text-align: left;
   margin: 30px;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.container {
+  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  margin-top: 20px;
+  max-width: 600px;
+}
+
+form {
+  margin: 15px;
   width: 50%;
+}
+
+div .row {
+  box-sizing: content-box;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding:0;
+  
+}
+
+button {
+  border-radius: 5px;
 }
 
 .line {
@@ -22,22 +51,6 @@ form {
 
 #description {
   font-size: 30px;
-}
-
-.container {
-  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
-  display: block;
-  margin: 30px auto;
-  padding: 10px 20px;
-  margin-top: 20px;
-  max-width: 600px;
-}
-
-h1 {
-  text-align: left;
-  margin: 30px;
-  font-size: 40px;
-  font-weight: lighter;
 }
 
 h2 {
@@ -63,13 +76,7 @@ h3 {
   text-align: center;
 }
 
-.row {
-  box-sizing: content-box;
-  width: 90%;
-  display: flex;
-  align-items: center;
-  padding-left: 8%;
-}
+
 
 .sunny {
   box-sizing: content-box;
