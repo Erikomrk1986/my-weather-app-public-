@@ -1,46 +1,33 @@
-let currentTime = new Date();
-console.log(document.querySelector("date"));
+function formatDate(timestamp) {
+  let currentTime = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[currentTime.getDay()];
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+  let currentLocalTime = currentTime.toLocaleString("en-AU", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  return `${currentLocalTime}`;
+}
 
-let day = days[currentTime.getDay()];
-////////////////////////////////////////////
-
-//let hours = (`0` + currentTime.getHours()).slice(-2);
-//let minutes = (`0` + currentTime.getMinutes()).slice(-2);
-
-let currentLocalTime = currentTime.toLocaleString("en-AU", {
-  hour: "2-digit",
-  minute: "2-digit",
-});
-
-let h2 = document.querySelector("h2");
-
-h2.innerHTML = `${day}  ${currentLocalTime}`;
-console.log(new Date());
-//////////////////////////////////////////////////////////////////////
-//when searching for a city (i.e. Paris),
-//display the city name
-//after the user submits the form
-///////////////////////
 function showTemperature(response) {
   let celsTemperature = Math.round(response.data.main.temp);
   let h3 = document.querySelector(".col2");
-  h3.innerHTML = `${celsTemperature} °C`;
+  h3.innerHTML = `${celsTemperature} °`;
 }
 
-/////////////      //////    /////    /////    /////    /////    ////   ////   ////
-//　searched
-//* DISPLAY WEATHER CONDITION
 function displayWeatherCondition(response) {
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
   document.querySelector("#loc_name").innerHTML = response.data.name;
   document.querySelector("#current_temp").innerHTML = `${Math.round(
     response.data.main.temp
@@ -51,32 +38,42 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-  document.querySelector("#precipitation").innerHTML = Math.round(
+  document.querySelector("#precip").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#sunrise").innerHTML = formatDate(response.data.sys.sunrise * 1000
+    
+  );
+  document.querySelector("#sunset").innerHTML = formatDate(response.data.sys.sunset * 1000
+    
+  );
 }
-//* SEARCH CITY - ***　DISPLAY WEATHER CONDITION 1
+
+//* SEARCH CITY -->　DISPLAY WEATHER CONDITION*
 function searchCity(city) {
   let apiKey = "9656d85472f993f571de9d36d411cd1e";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
-//* HANDLE SUBMIT
+//* HANDLE SUBMIT --> SEARCH CITY
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#loc_input");
   let city = cityInput.value;
-  searchCity(city); //when submit, call function [search city]
+  searchCity(city);
 }
-//* SEARCH CITY - *** DISPLAY WEAHTER CONDITION 2
+//* SEARCH CITY --> DISPLAY WEAHTER CONDITION*
 function searchLocation(position) {
   let apiKey = "9656d85472f993f571de9d36d411cd1e";
-  let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}`;
   let apiUrl = `${apiEndpoint}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
+
+  https: axios.get(apiUrl).then(displayWeatherCondition);
 }
-// CURRENT CITY
+// CURRENT CITY --> SEARCH LOCATION
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -87,5 +84,5 @@ locForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-////////
-searchCity("muscat");
+
+searchCity("bangkok");
