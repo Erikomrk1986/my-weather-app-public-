@@ -63,12 +63,10 @@ h3 {
   font-size: 60px;
 }
 
-.col {
+#weather-icon {
   margin-right: 5%;
-  margin-left: 15%;
+  margin-left: 5%;
   text-align: center;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 .col-5 {
