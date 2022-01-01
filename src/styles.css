@@ -3,15 +3,8 @@ body {
   font-family: "Roboto Slab", serif;
 }
 
-h1 {
-  text-align: left;
-  margin: 30px;
-  font-size: 30px;
-  font-weight: lighter;
-}
-
 .container {
-  background: linear-gradient(0.35turn, #3f87a6, #ebf8e1, #f69d3c);
+  background: linear-gradient(0.35turn, #6dbfe2, #ebf8e1, #f69d3c);
   display: block;
   margin: 30px auto;
   padding: 10px 20px;
@@ -26,15 +19,23 @@ form {
 
 div .row {
   box-sizing: content-box;
-  width: 90%;
-  display: flex;
+  width: 100%;
   align-items: center;
-  padding:0;
-  
 }
 
 button {
-  border-radius: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #76cdf1;
+  border-color: #76cdf1;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
 }
 
 .line {
@@ -55,7 +56,7 @@ button {
 
 #date {
   text-align: center;
-  font-size: 28px;
+  font-size: 15px;
 }
 
 h3 {
@@ -75,8 +76,6 @@ h3 {
   font-size: 30px;
   text-align: center;
 }
-
-
 
 .sunny {
   box-sizing: content-box;
@@ -110,4 +109,8 @@ li {
   align-items: center;
   padding-left: 3%;
   text-decoration-line: none;
+}
+
+ul {
+  margin: 0;
 }

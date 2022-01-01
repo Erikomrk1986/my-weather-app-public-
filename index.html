@@ -19,58 +19,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-   <h1>SheCodes Weather App Project</h1>
     <div class="container">
-
-
-
       <div class="weather-app-wrapper">      
-        <div class="search-engine">             
+        <div class="search-engine"> 
           <form class="loc_form" id="loc_form">
             <div class="row">
-             <div class="col-12">
-              <input type="search" id="loc_input" 
-              placeholder="Enter a city"
-              class= "form-control" 
-              id="city_input" 
-              />
-              </div>
+             <div class="col-9">          
+                 <button type="submit" class = "search" id = "btn_search_city" value="Search">
+                   <img width = "20px" src = "images/magnifying-glass.png">
+                 </button> 
 
-          
+                 <input type="search" id="loc_input" placeholder=" Search a city... "
+                 class= "form-control" id="city_input" />
+              
+                 <div class = "location">
+                    <button class="btn-success" id="current-location-bttn">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>             
+               </div>
 
-                   <button type="submit" id = "btn_serch_city" value="Search">
-                    Search
-                   </button>
-                   <button class="btn_success w-100"
-                   id="current-location-button">
-                    Current
-                   </button>
                   </div>
                 </div>
           </div>
         </form>
-             
+        </div>           
        
         <h1 id="loc_name"></h1>
-
         <ul>
           <li>Last updated <span id="date"></span></li>
         </ul>
-      
         <h2 ></h2>
 
         <h3>
           <div class="row">  
                <div class="col" id = "weather-icon"> 
-                   <img class="sunny" src="images/sunny-icon.png" alt="Sunny" /> 
+                   <img src="" alt="" id = "icon" /> 
                </div>
                
                <div class="col" id="current_temp"> 
                  <span id="current_temp">temp</span></div>
-               <div class="line"></div>
+               
           </div>
         </h3>
-
 
         <p>
           <li id="description">SUNNY</li>
@@ -82,70 +71,22 @@
             <li>Sunrise: <span id="sunrise"> 0 </span></li>
             <li>Sunset:  <span id="sunset">0 </span></li>
 
-         <hr>      
+         <hr>   
+         <div class = "row"></div>
+         <div class = "weather-forecast" id = "forecast">
 
-        <div class="row">
-            <div class="col-sm"> 
-              Tomorrow </div>
-            <div class="col-sm"> 
-             <img 
-             class="sunny-sub-icon" src="images/sunny-icon.png" alt="Sunny" /> 
-            </div>
-            
-            <div class="col-sm"> 
-              30°
-            </div>         
-            
-            <div class=w-200"></div>
-            <div class="col-sm"> 
-              Mon 
-            </div>
-            
-            <div class="col-sm"> 
-             <img class="sunny-sub-icon" src="images/sunny-icon.png" alt="Sunny" /> 
-            </div>
+         </div>
 
-            <div class="col-sm"> 
-              31°
-            </div>
 
-            <div class=w-200"></div>
-            <div class="col-sm"> 
-              Tue 
-            </div>
-            <div class="col-sm"> 
-            <img class="sunny-sub-icon" src="images/sunny-icon.png" alt="Sunny" /> 
-            </div>
-            <div class="col-sm"> 34° </div>
-
-            <div class=w-200"></div>
-            <div class="col-sm"> Wed </div>
-              <div class="col-sm"> 
-             <img 
-             class="sunny-sub-icon"
-             src="images/sunny-icon.png" 
-             alt="Sunny" /> 
-            </div>
-              <div class="col-sm"> 34° </div>
-
-             <div class=w-200"></div>
-              <div class="col-sm">  Thu </div>
-              <div class="col-sm"> 
-             <img 
-             class="sunny-sub-icon"
-             src="images/sunny-icon.png" 
-             alt="Sunny" /> 
-            </div>
-              <div class="col-sm"> 33° </div>
    </div>
         </div>
-          
-        </div>
-        <div class="hungry"> 
+       <div class="hungry"> 
             <a href="https://hungry-hypatia-a2fdaf.netlify.app/">
              Open-source code </a> &nbsp;
             by Eriko KRY
+        </div>   
         </div>
+        
         </div>
           
 

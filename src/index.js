@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let currentTime = new Date();
+  let currentTime = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -17,6 +17,56 @@ function formatDate(timestamp) {
   });
   return `${currentLocalTime}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+//Display FORECAST
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class = "row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6 && 0 < index) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row">
+            <div class="col-sm"> 
+              ${formatDay(forecastDay.dt)} </div>
+            <div class="col-sm"> 
+             <img img 
+               src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+              alt""  width="45" /> 
+            </div>
+            <div class="forecast-temp"> 
+            <span class = "weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}° 
+            </span>|
+          <span class = "weather-forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}° 
+          </span>
+          </div> 
+ 
+      `;
+    }
+  })
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+
+}
+
+function getForecast(coordinates) {
+  let apiKey = "9656d85472f993f571de9d36d411cd1e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 
 function showTemperature(response) {
   let celsTemperature = Math.round(response.data.main.temp);
@@ -47,6 +97,17 @@ function displayWeatherCondition(response) {
   document.querySelector("#sunset").innerHTML = formatDate(response.data.sys.sunset * 1000
     
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord); 
 }
 
 //* SEARCH CITY -->　DISPLAY WEATHER CONDITION*
@@ -82,7 +143,7 @@ function getCurrentLocation(event) {
 let locForm = document.querySelector("#loc_form");
 locForm.addEventListener("submit", handleSubmit);
 
-let currentLocationButton = document.querySelector("#current-location-button");
+let currentLocationButton = document.querySelector("#current-location-bttn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("bangkok");
