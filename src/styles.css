@@ -14,7 +14,7 @@ body {
 
 form {
   margin: 15px;
-  width: 50%;
+  width: 60%;
 }
 
 div .row {
@@ -65,8 +65,12 @@ h3 {
 
 .col {
   margin-right: 5%;
+  margin-left: 15%;
   text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
 .col-5 {
   padding: 30% auto;
 }
@@ -77,19 +81,9 @@ h3 {
   text-align: center;
 }
 
-.sunny {
-  box-sizing: content-box;
-  width: 80%;
-}
-
 p {
   font-size: 30px;
   text-align: center;
-}
-
-.sunny-sub-icon {
-  box-sizing: content-box;
-  width: 50%;
 }
 
 li {
