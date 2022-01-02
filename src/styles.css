@@ -18,7 +18,9 @@ form {
 }
 
 .row {
-  
+  width:80%;
+  margin: 0 10%;
+
 }
 
 h1 {
@@ -65,7 +67,7 @@ button {
 }
 
 .form-control {
-  width: 70%;
+  width: 80%;
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;
   margin: 2%; 
@@ -83,6 +85,7 @@ button {
 
 h3 {
   font-size: 60px;
+  margin:0;
 }
 
 .line {
@@ -133,7 +136,8 @@ h3 {
 }
 
 .col-6 {
-  padding: 0 15%;
+  padding: 0 10%;
+  
 }
 p {
   font-size: 30px;
@@ -159,4 +163,5 @@ li {
   padding-left: 3%;
   text-decoration-line: none;
 }
+
 
