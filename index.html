@@ -19,56 +19,77 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+ 
+
     <div class="container">
       <div class="weather-app-wrapper">      
         <div class="search-engine"> 
           <form class="loc_form" id="loc_form">
             <div class="row">
-             <div class="col-9">          
-                 <button type="submit" class = "search" id = "btn_search_city" value="Search">
-                   <img width = "20px" src = "images/magnifying-glass.png">
-                 </button> 
-
-                 <input type="search" id="loc_input" placeholder=" Search a city... "
-                 class= "form-control" id="city_input" />
+              <div class = "search-place">   
+                <div class="col-9">      
+                  <button type="submit" class="search" id="btn_search_city" value="Search">
+                    <i class = "fa fa-search" aria-hidden="true"></i>
+                  </button> 
               
-                 <div class = "location">
-                    <button class="btn-success" id="current-location-bttn">
-                    <i class="fa fa-map-pin" aria-hidden="true"></i>             
-                 </div>
+                  <input type = "search" id="loc_input" placeholder = " Search new place.."
+                  class="form-control">
+                </div> 
+                  
+              <div class = "col-3">  
+              <button class="btn-success" id="current-location-bttn"> 
+              <i class="fa fa-map-pin"></i> 
+              </button>   
+
+                </div> 
+              
+                 <div class = "location"></div>  
              </div>
             </div>
           </div>
         </form>
         </div>           
       <h1 id="loc_name"></h1>
-
       <ul>
-        <li>Last updated <span id="date"></span></li>
+        <li id="today">Last updated <span id="date"></span></li>
       </ul>
       <h2 ></h2>
-
       <h3>
           <div class="row">  
-
                <div class="col" id ="weather-icon"> 
                <img src="" alt="" id="icon" /> </div>
-               
                <div class="col" id="current_temp"> 
-               <span id="current_temp"></span> </div>
-               
+               <span id="current_temp"></span> </div>              
           </div>
         </h3>
-
-        <p>
-          <li id="description"></li>
-        </p>
         
-        <li> Precip: <span id="precip">0</span>%</li>
-          <li> Humidity: <span id="humidity"> 0 </span>%</li>
-            <li>Wind: <span id="windspeed"> 0 </span>km/h </li>
-            <li>Sunrise: <span id="sunrise"> 0 </span></li>
-            <li>Sunset:  <span id="sunset">0 </span></li>
+          <li id="description"></li>
+        <div class="row">
+          <div class="col-6">
+            <ul>
+              <li>
+                Precip: <span id="precip">0</span>%
+              </li>
+              <li>
+                Humidity: <span id="humidity"> 0 </span>%
+              </li>
+              <li>
+                Wind: <span id="windspeed"> 0 </span>km/h 
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>
+                Sunrise: <span id="sunrise"> 0 </span>
+              </li>
+              <li>
+                Sunset:  <span id="sunset">0 </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
          <hr>   
          <div class = "row"></div>
          <div class = "weather-forecast" id = "forecast">
