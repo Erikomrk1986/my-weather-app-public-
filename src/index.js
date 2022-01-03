@@ -60,7 +60,7 @@ function displayForecast(response) {
            </span>
             </div> 
             </div>
-            </div>
+            </div><hr>
       `;
     }
   })
