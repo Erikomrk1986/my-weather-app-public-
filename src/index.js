@@ -154,4 +154,4 @@ locForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-bttn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("Dubai");
+searchCity("New York");
