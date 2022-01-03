@@ -104,6 +104,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#sunset").innerHTML = formatDate(response.data.sys.sunset * 1000
     
   );
+  
   document
     .querySelector("#icon")
     .setAttribute(
@@ -153,4 +154,4 @@ locForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-bttn");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-searchCity("bangkok");
+searchCity("Dubai");
