@@ -38,7 +38,7 @@
                   
               <div class = "col-3">  
               <button class="btn-success" id="current-location-bttn"> 
-              <i class="fa fa-map-pin"></i> 
+              <i class="fas fa-location-arrow" width="18"></i>
               </button>   
 
                 </div> 
@@ -53,25 +53,24 @@
       <ul>
         <li id="today">Last updated <span id="date"></span></li>
       </ul>
-      <h2 ></h2>
-      <h3>
-          <div class="row">  
+      <h2>
+          <div class="row" id ="todays-weather">  
                <div class="col" id ="weather-icon"> 
                <img src="" alt="" id="icon" /> </div>
                <div class="col" id="current_temp"> 
                <span id="current_temp"></span> </div>              
           </div>
-        </h3>
         
+          <div class="row" id ="climatic-element">
           <li id="description"></li>
         <div class="row">  
            <div class="col-6">
             <ul>
               <li> <img src="images/Precip-icon-2.png" width="18" />
-                Precip: <span id="precip">0</span>%
+                Precip <span id="precip">0</span>%
               </li>
               <li> <img  src="images/Humidity-icon.png" width="18" />
-                Humidity: <span id="humidity"> 0 </span>%
+                Humidity <span id="humidity"> 0 </span>%
               </li>
               <li> <img  src="images/Wind-icon.png" width="18" />
                 Wind <span id="windspeed"> 0 </span>km/h 
@@ -82,8 +81,6 @@
             <ul>
               <li> <img  src="images/sunrise-icon.png" width="25" /> 
                  <span id="sunrise"> </span>
-                
-
               </li>
               <li> <img  src="images/sunset-icon.png" width="25" />
                  <span id="sunset">0 </span>
@@ -91,31 +88,27 @@
             </ul>
           </div>
         </div>
-     
-
-         <hr>   
-         <div class = "row"></div>
-         <div class = "weather-forecast" id = "forecast">
+     </div>
+      </h2>
+<hr> 
+<h3>
+         <div class = "row" id ="following-days"></div>
+         <div class = "weather-forecast" id = "forecast"></div>
+         
          </div>
-
-
-   </div>
-        </div>
-       <div class="hungry"> 
+         </div>
+         <div class="hungry"> 
             <a href="https://hungry-hypatia-a2fdaf.netlify.app/">
              Open-source code </a> &nbsp;
             by Eriko KRY
-        </div>   
+         </div>   
+         </div>
         </div>
-        
-        </div>
-          
-
         </div> 
-    </div>
         </div>
+        </div>
+      </h3>
     </div>
-    
     <script src="src/index.js"></script>
 </body>
 </html>

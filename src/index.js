@@ -43,18 +43,24 @@ function displayForecast(response) {
               ${formatDay(forecastDay.dt)} </div>
             <div class="col-sm"> 
              　<img 
-                src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+                src="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" 
                 alt""  width="60" /> 
             </div>
-            
+            <div class="col-sm"> 
             <div class="forecast-temp"> 
-            <span class = "weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}° 
+            <span class = "weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° 
             </span>|
-            <span class = "weather-forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}° 
+            <span class = "weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}° 
            </span>
             </div> 
             </div>
- 
+            </div>
       `;
     }
   })
