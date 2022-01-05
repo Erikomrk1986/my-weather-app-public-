@@ -32,7 +32,7 @@ function displayForecast(response) {
   
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class = "row">`;
+  let forecastHTML = ``;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6 && 0 < index) {
       forecastHTML =
@@ -41,22 +41,22 @@ function displayForecast(response) {
       <div class="row">
             <div class="col-sm" id="day"> 
               ${formatDay(forecastDay.dt)} </div>
-            <div class="col-sm"> 
+            
+              <div class="col-sm" id="icon"> 
              　<img 
                 src="https://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
                 }@2x.png" 
                 alt""  width="60" /> 
-            </div>
-            <div class="col-sm"> 
-            <div class="forecast-temp"><strong>
+            </div>       
+            <div class="col-sm" id="temp-max-min>  
             <span class = "weather-forecast-temperature-max"> ${Math.round(
               forecastDay.temp.max
             )}° 
             </span>|
             <span class = "weather-forecast-temperature-min"> ${Math.round(
               forecastDay.temp.min
-            )}° </strong>
+            )}° 
            </span>
             </div> 
             </div>
@@ -85,7 +85,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#date").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  document.querySelector("#loc_name").innerHTML = response.data.name;
+  document.querySelector("#loc_name").innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#current_temp").innerHTML = `${Math.round(
     response.data.main.temp
   )}°`;
@@ -98,12 +98,10 @@ function displayWeatherCondition(response) {
   document.querySelector("#precip").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#sunrise").innerHTML = formatDate(response.data.sys.sunrise * 1000
-    
-  );
-  document.querySelector("#sunset").innerHTML = formatDate(response.data.sys.sunset * 1000
-    
-  );
+  document.querySelector("#sunrise").innerHTML = 
+   formatDate(response.data.sys.sunrise * 1000);
+  document.querySelector("#sunset").innerHTML = 
+   formatDate(response.data.sys.sunset * 1000);
   
   document
     .querySelector("#icon")
