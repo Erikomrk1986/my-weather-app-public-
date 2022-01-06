@@ -19,6 +19,7 @@ form {
 .row {
   margin-right: 0;
   margin-left: 0;
+  --bs-gutter-x: 0rem;
 }
 
 div.search-engine{
@@ -90,6 +91,7 @@ button {
 h2 {
   font-size: 60px;
   margin:18;
+  margin-bottom: 0;
 }
 
 #todays-weather {
@@ -121,7 +123,7 @@ h3 {
 #day {
   font-size: 20px;
   color: grey; 
-  padding:  4% 0 4% 10% ;
+  
 }
 
 
@@ -191,8 +193,11 @@ li {
 .weather-forecast-temperature-min {
   color:grey;
 }
+#day,
+#temp-max-min { 
+  padding: 2%;
+}
 
-.temp-max-min {
-  font-size: 10px;
-  padding: 4%;
+.weather-forecast{
+  text-align: center;
 }
