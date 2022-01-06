@@ -122,8 +122,7 @@ h3 {
 
 #day {
   font-size: 20px;
-  color: grey; 
-  
+  color: grey;  
 }
 
 
@@ -193,9 +192,8 @@ li {
 .weather-forecast-temperature-min {
   color:grey;
 }
-#day,
-#temp-max-min { 
-  padding: 2%;
+#day { 
+  padding: 4% 0px 4% 10%;
 }
 
 .weather-forecast{
